@@ -24,3 +24,25 @@ Launch
 $ flask run
 
 ```
+
+
+OR
+
+Use Docker:
+
+```sh
+docker run --name microblog -d -p 8000:5000 --rm -e SECRET_KEY=my-secret-key \
+microblog:latest
+```
+
+To list containers:
+
+```sh
+docker ps
+```
+
+Find the container_id. To stop:
+
+```sh
+docker stop <container_id>
+```
