@@ -1,26 +1,24 @@
 # flask_test
 
-First experiment
 
-To launch:
-
-Create Virtual Environment
-```sh
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
-```
-
-Set FLASK_APP=microblog.py
-Set FLASK_ENV=development or FLASK_ENV=production
-
-Alternatively, you can create a `.flaskenv` file with:
-> FLASK_APP=microblog.py
-> FLASK_ENV=`development` or `production`
-
-Launch
-
-```sh
-$ flask run
+Build the image:
 
 ```
+docker build -t marco/flask:dev .
+```
+
+Run the image:
+
+```
+docker run -it -p 5000:5000 marco/flask:dev
+```
+
+
+For fast dev you can do this:
+
+```
+docker run -it -v "$PWD":/app marco/flask:dev bash
+python run.py
+```
+
+Then make local changes in your editor then you can CTRL+C to stop the server then `python run.py` to start again
